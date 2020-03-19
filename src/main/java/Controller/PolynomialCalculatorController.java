@@ -57,9 +57,11 @@ public class PolynomialCalculatorController {
                         break;
                 }
                 view.setRes(model.getResult().toString(), model.getRemainder().toString()); // La final afisam rezultatul
-                model.resetResult();
+                model.reset();
             } catch (NumberFormatException nfex) {  // Daca nu s-au introdus numere (cu exceptia caracterelor 'x' si '^') afisam o eroare
-                view.showError("Bad input");
+                view.showError("Incorrect input");
+            }catch (ArithmeticException aex){
+                view.showError("Cannot divide by 0");
             }
         }
     }

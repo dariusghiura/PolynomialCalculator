@@ -20,7 +20,7 @@ public class PolynomialCalculatorView extends JFrame {
     public PolynomialCalculatorView(PolynomialCalculatorOperations model) {
 
         this.model = model;
-        this.model.resetResult();
+        this.model.reset();
 
         tfRes.setText(this.model.getResult().toString());
         tfRes1.setText(this.model.getRemainder().toString());
@@ -48,15 +48,25 @@ public class PolynomialCalculatorView extends JFrame {
         gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0};
         panel.setLayout(gbl_panel);
 
+        JLabel label = new JLabel("Polynomial 1: ");
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        GridBagConstraints gbc_label = new GridBagConstraints();
+        gbc_label.fill = GridBagConstraints.HORIZONTAL;
+        gbc_label.gridwidth = 6;
+        gbc_label.gridheight = 2;
+        gbc_label.insets = new Insets(0, 0, 5, 5);
+        gbc_label.gridx = 0;
+        gbc_label.gridy = 0;
+        panel.add(label, gbc_label);
+
         GridBagConstraints gbc_textField = new GridBagConstraints();
         gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-        gbc_textField.gridwidth = 18;
+        gbc_textField.gridwidth = 13;
         gbc_textField.gridheight = 2;
         gbc_textField.insets = new Insets(0, 0, 5, 5);
-        gbc_textField.gridx = 1;
+        gbc_textField.gridx = 6;
         gbc_textField.gridy = 0;
         panel.add(tfPol1, gbc_textField);
-        tfPol1.setColumns(30);
 
         GridBagConstraints gbc_buttonClear = new GridBagConstraints();
         gbc_buttonClear.insets = new Insets(0, 0, 5, 5);
@@ -67,15 +77,25 @@ public class PolynomialCalculatorView extends JFrame {
         gbc_buttonClear.gridy = 0;
         panel.add(buttonClear, gbc_buttonClear);
 
+        JLabel label2 = new JLabel("Polynomial 2: ");
+        label2.setHorizontalAlignment(SwingConstants.CENTER);
+        GridBagConstraints gbc_label2 = new GridBagConstraints();
+        gbc_label2.fill = GridBagConstraints.HORIZONTAL;
+        gbc_label2.gridwidth = 6;
+        gbc_label2.gridheight = 2;
+        gbc_label2.insets = new Insets(0, 0, 5, 5);
+        gbc_label2.gridx = 0;
+        gbc_label2.gridy = 2;
+        panel.add(label2, gbc_label2);
+
         GridBagConstraints gbc_textField_1 = new GridBagConstraints();
         gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-        gbc_textField_1.gridwidth = 18;
+        gbc_textField_1.gridwidth = 13;
         gbc_textField_1.gridheight = 2;
         gbc_textField_1.insets = new Insets(0, 0, 0, 5);
-        gbc_textField_1.gridx = 1;
+        gbc_textField_1.gridx = 6;
         gbc_textField_1.gridy = 2;
         panel.add(tfPol2, gbc_textField_1);
-        tfPol2.setColumns(30);
 
         JPanel panel_1 = new JPanel();
         GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -182,7 +202,6 @@ public class PolynomialCalculatorView extends JFrame {
         gdc_res1.gridx = 2;
         gdc_res1.gridy = 0;
         panel_2.add(tfRes, gdc_res1);
-        tfRes.setColumns(10);
 
         tfRes1.setEditable(false);
         GridBagConstraints gdc_res2 = new GridBagConstraints();
@@ -192,7 +211,6 @@ public class PolynomialCalculatorView extends JFrame {
         gdc_res2.gridx = 14;
         gdc_res2.gridy = 0;
         panel_2.add(tfRes1, gdc_res2);
-        tfRes1.setColumns(10);
 
         this.setTitle("Polynomial Calculator");
         this.setBounds(400,200, 800, 450);

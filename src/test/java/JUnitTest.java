@@ -4,7 +4,7 @@ import org.junit.Test;
 import junit.framework.TestCase;
 
 public class JUnitTest extends TestCase {
-    Polynomial p1,p2;
+    private Polynomial p1,p2;
     PolynomialCalculatorOperations model = new PolynomialCalculatorOperations();
 
     public void setUp(){
@@ -41,7 +41,7 @@ public class JUnitTest extends TestCase {
 
     @Test
     public void testIntegr(){
-        assertEquals("0.66x^3-1.5x^2+x^1", model.integrPolynomials(p1).toString().replace(" ", ""));
+        assertEquals("0.6666666666666666x^3-1.5x^2+x^1", model.integrPolynomials(p1).toString().replace(" ", ""));
     }
 
 

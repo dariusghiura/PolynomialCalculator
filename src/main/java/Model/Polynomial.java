@@ -14,10 +14,15 @@ public class Polynomial {
             Monomial m = new Monomial(matcher.group().replace(" ","")); // Stergem spatiile
             monomials.add(m);
         }
+        Collections.sort(monomials);
     }
 
     public Polynomial(Monomial m) {
         monomials.add(m);
+    }
+
+    public Polynomial() {
+
     }
 
     public ArrayList<Monomial> getMonomials() {
@@ -46,7 +51,7 @@ public class Polynomial {
     public String toString() {
         String s = "";
         if (monomials.isEmpty()) // Daca lista de monoame e goala -> polinomul = 0
-            return "0";
+            return "0.0";
         else {
             boolean first = true;
             Iterator i = monomials.iterator();

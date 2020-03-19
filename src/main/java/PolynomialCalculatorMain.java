@@ -6,7 +6,7 @@ public class PolynomialCalculatorMain {
     public static void main(String[] args) {
         PolynomialCalculatorOperations model = new PolynomialCalculatorOperations();
         PolynomialCalculatorView view = new PolynomialCalculatorView(model);
-        PolynomialCalculatorController controller = new PolynomialCalculatorController(view, model);
+        new PolynomialCalculatorController(view, model);
 
         view.setVisible(true);
     }
